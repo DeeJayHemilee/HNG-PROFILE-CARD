@@ -263,25 +263,25 @@
         </div>
     </div>
 
-    <script>
-        // Update the current time
-        function updateTime() {
-            const timeElement = document.querySelector('.time');
-            if (timeElement) {
-                const now = new Date();
-                const formattedTime = now.toLocaleTimeString('en-US', {
-                    hour: 'numeric',
-                    minute: '2-digit',
-                    second: '2-digit',
-                    hour12: true
-                });
-                timeElement.textContent = formattedTime;
-            }
-        }
+        <script>
+        // JavaScript to update the current time in milliseconds
+        document.addEventListener('DOMContentLoaded', () => {
+            const timeElement = document.querySelector('[data-testid="test-user-time"]');
 
-        // Update time immediately and then every second
-        updateTime();
-        setInterval(updateTime, 1000);
+            if (timeElement) {
+                // Function to update the time in milliseconds
+                const updateTime = () => {
+                    const currentTimeMillis = Date.now();
+                    timeElement.textContent = currentTimeMillis + ' ms';
+                };
+
+                // Update the time immediately on load
+                updateTime();
+
+                // Update every 100ms for better accuracy
+                setInterval(updateTime, 100);
+            }
+        });
     </script>
 </body>
 </html>
