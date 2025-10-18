@@ -230,10 +230,13 @@
                 </div>
                 
                 <!-- Current Time -->
-                <div class="section time-container">
-                    <h3 class="section-title">Current Time</h3>
-                    <div class="time">Loading...</div>
-                </div>
+                <section class="time-container" aria-labelledby="time-heading">
+                     <h3 id="time-heading" class="section-title">Current Time</h3>
+                     <p data-testid="test-user-time" class="time">
+                        <!-- Time in milliseconds will be injected here by JavaScript -->
+                        Loading...
+                     </p>
+                </section>
 
                 <div class="hobbies-dislikes">
                     <!-- Hobbies -->
