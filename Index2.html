@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Profile</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+            <li><a href="about.html" class="nav-link">About Me</a></li>
+        </ul>
+    </nav>
+
+    <!-- Profile Page -->
+    <main>
+        <article data-testid="test-profile-card" class="card">
+            <div class="card-content">
+                <!-- Left Section: Avatar and Social Links -->
+                <div class="left-section">
+                    <!-- Avatar Image -->
+                    <figure>
+                        <img data-testid="test-user-avatar"
+                             class="avatar"
+                             src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxyYWRpYWxHcmFkaWVudCBpZD0iZ3JhZGllbnQiIGN4PSIzMCUiIGN5PSIzMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjODc0N0Y2Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzVCNTNGRiIvPgogICAgPC9yYWRpYWxHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9InVybCgjZ3JhZGllbnQpIi8+CiAgPGNpcmNsZSBjeD0iMTAwIiBjeT0iODAiIHI9IjM1IiBmaWxsPSIjRkZGIiBvcGFjaXR5PSIwLjgiLz4KICA8Y2lyY2xlIGN4PSIxMDAiIGN5PSIxMjAiIHI9IjUwIiBmaWxsPSIjRkZGIiBvcGFjaXR5PSIwLjgiLz4KICA8Y2lyY2xlIGN4PSI4MCIgY3k9IjcwIiByPSIxMCIgZmlsbD0iIzMzMyIvPgogIDxjaXJjbGUgY3g9IjEyMCIgY3k9IjcwIiByPSIxMCIgZmlsbD0iIzMzMyIvPgogIDxwYXRoIGQ9Ik03MCAxMjAgQzgwIDE0MCAxMjAgMTQwIDEzMCAxMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+"
+                             alt="Profile avatar for John Doe">
+                    </figure>
+
+                    <!-- Name (Header) -->
+                    <header>
+                        <h2 data-testid="test-user-name" class="name">
+                            John Doe
+                        </h2>
+                        <p class="title">Frontend Wizard</p>
+                    </header>
+
+                    <!-- Social Links -->
+                    <nav>
+                        <ul data-testid="test-user-social-links" class="social-links">
+                            <li>
+                                <a data-testid="test-user-social-github" href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub Profile">
+                                    <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                               <a data-testid="test-user-social-linkedin" href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn Profile">
+                                    <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                               <a data-testid="test-user-social-twitter" href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Twitter Profile">
+                                    <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                
+                <!-- Right Section: Bio, Time, Hobbies, Dislikes -->
+                <div class="right-section">
+                    <!-- Biography -->
+                    <section aria-labelledby="bio-heading">
+                        <h3 id="bio-heading" class="section-title">Biography</h3>
+                        <p data-testid="test-user-bio" class="bio">
+                            A passionate frontend developer with a knack for creating beautiful, responsive, and user-friendly web experiences. Always learning and exploring new technologies to push the boundaries of what's possible on the web.
+                        </p>
+                    </section>
+                    
+                    <!-- Current Time -->
+                    <section class="time-container" aria-labelledby="time-heading">
+                         <h3 id="time-heading" class="section-title">Current Time</h3>
+                         <p data-testid="test-user-time" class="time">
+                            Loading...
+                         </p>
+                    </section>
+
+                    <div class="hobbies-dislikes">
+                        <!-- Hobbies -->
+                        <section aria-labelledby="hobbies-heading">
+                            <h3 id="hobbies-heading" class="section-title">Hobbies</h3>
+                            <ul data-testid="test-user-hobbies" class="tags">
+                               <li><span class="tag hobby-tag">Coding</span></li>
+                               <li><span class="tag hobby-tag">Open Source</span></li>
+                               <li><span class="tag hobby-tag">Gaming</span></li>
+                               <li><span class="tag hobby-tag">Sci-Fi Movies</span></li>
+                               <li><span class="tag hobby-tag">Hiking</span></li>
+                            </ul>
+                        </section>
+
+                        <!-- Dislikes -->
+                        <section aria-labelledby="dislikes-heading">
+                            <h3 id="dislikes-heading" class="section-title">Dislikes</h3>
+                            <ul data-testid="test-user-dislikes" class="tags">
+                               <li><span class="tag dislike-tag">Slow WiFi</span></li>
+                               <li><span class="tag dislike-tag">!important</span></li>
+                               <li><span class="tag dislike-tag">Merge Conflicts</span></li>
+                               <li><span class="tag dislike-tag">IE11 Support</span></li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
