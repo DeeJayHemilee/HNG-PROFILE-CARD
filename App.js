@@ -1,23 +1,47 @@
- // Navigation functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const navLinks = document.querySelectorAll('.nav-link');
-            const pages = document.querySelectorAll('.page-container');
-            
-            // Set up navigation
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    // Remove active class from all links and pages
-                    navLinks.forEach(l => l.classList.remove('active'));
-                    pages.forEach(page => page.classList.remove('active'));
-                    
-                    // Add active class to clicked link and corresponding page
-                    this.classList.add('active');
-                    const pageId = this.getAttribute('data-page') + '-page';
-                    document.getElementById(pageId).classList.add('active');
-                });
-            });
+// Navigation functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Set active navigation based on current page
+    setActiveNavigation();
+    
+    // Initialize page-specific functionality
+    initializePage();
+});
+
+function setActiveNavigation() {
+    const currentPage = getCurrentPage();
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+        if (link.getAttribute('href').includes(currentPage)) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+}
+
+function getCurrentPage() {
+    const path = window.location.pathname;
+    if (path.includes('contact.html')) return 'contact';
+    if (path.includes('about.html')) return 'about';
+    return 'profile'; // Default to profile
+}
+
+function initializePage() {
+    const currentPage = getCurrentPage();
+    
+    switch(currentPage) {
+        case 'profile':
+            initializeProfilePage();
+            break;
+        case 'contact':
+            initializeContactPage();
+            break;
+        case 'about':
+            // About page doesn't need special initialization
+            break;
+    }
+}
 
             // Time functionality for profile page
             const timeElement = document.querySelector('[data-testid="test-user-time"]');
