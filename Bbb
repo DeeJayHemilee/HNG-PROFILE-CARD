@@ -1,0 +1,210 @@
+Bio (test-about-bio)
+I’m Seun, a creative professional passionate about blending science, design, and technology. I’m currently pursuing my MSc in Medical Physics at UNILAG, while also working as a front-end developer and fashion consultant. I love creating things that are both meaningful and visually appealing, and I’m driven by purpose, growth, and faith in God.
+
+Goals in this program (test-about-goals)
+
+Build strong, responsive, and accessible web applications
+
+Improve my understanding of clean, structured code
+
+Gain real project experience and problem-solving skills
+
+Merge my design sense with technical knowledge
+
+Use what I learn to make an impact across science, fashion, and tech
+
+
+Areas of low confidence (test-about-confidence)
+
+Staying consistent with daily practice
+
+Overcoming perfectionism when coding or designing
+
+Managing time effectively during multitasking
+
+Believing in my progress when I feel behind others
+
+
+Note to future self (test-about-future-note)
+
+Keep trusting God — He’s still writing your story
+
+Don’t rush; growth takes time and discipline
+
+Remember why you started and how far you’ve come
+
+Stay authentic, even when no one is watching
+
+Rest when needed; you don’t have to do it all at once
+
+
+Extra thoughts (test-about-extra)
+
+Every skill you’re learning is preparing you for something bigger
+
+Creativity and faith are your strongest assets
+
+You’re meant to lead and inspire, not compare
+
+Keep building with excellence — your work will speak for itself
+
+
+
+
+// Navigation functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Set active navigation based on current page
+    setActiveNavigation();
+    
+    // Initialize page-specific functionality
+    initializePage();
+});
+
+function setActiveNavigation() {
+    const currentPage = getCurrentPage();
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+        if (link.getAttribute('href').includes(currentPage)) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+}
+
+function getCurrentPage() {
+    const path = window.location.pathname;
+    if (path.includes('contact.html')) return 'contact';
+    if (path.includes('about.html')) return 'about';
+    return 'profile'; // Default to profile
+}
+
+function initializePage() {
+    const currentPage = getCurrentPage();
+    
+    switch(currentPage) {
+        case 'profile':
+            initializeProfilePage();
+            break;
+        case 'contact':
+            initializeContactPage();
+            break;
+        case 'about':
+            // About page doesn't need special initialization
+            break;
+    }
+}
+
+function initializeProfilePage() {
+    // Time functionality for profile page
+    const timeElement = document.querySelector('[data-testid="test-user-time"]');
+    if (timeElement) {
+        const updateTime = () => {
+            const currentTimeMillis = Date.now();
+            timeElement.textContent = currentTimeMillis + ' ms';
+        };
+        updateTime();
+        setInterval(updateTime, 100);
+    }
+}
+
+function initializeContactPage() {
+    // Contact form validation
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        const inputs = contactForm.querySelectorAll('input, textarea');
+        const successMessage = contactForm.querySelector('.success-message');
+        
+        // Real-time validation
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                validateField.call(this);
+            });
+            input.addEventListener('input', function() {
+                clearError.call(this);
+            });
+        });
+        
+        // Form submission
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let isValid = true;
+            inputs.forEach(input => {
+                if (!validateField.call(input)) {
+                    isValid = false;
+                }
+            });
+            
+            if (isValid) {
+                // Show success message
+                if (successMessage) {
+                    successMessage.classList.add('show');
+                }
+                
+                // Reset form
+                contactForm.reset();
+                
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    if (successMessage) {
+                        successMessage.classList.remove('show');
+                    }
+                }, 5000);
+            }
+        });
+    }
+}
+
+function validateField() {
+    const field = this;
+    const errorElement = document.getElementById(field.id + '-error');
+    
+    // Clear previous error
+    field.classList.remove('error');
+    if (errorElement) {
+        errorElement.classList.remove('show');
+    }
+    
+    // Check required fields
+    if (field.value.trim() === '') {
+        showError(field, errorElement, 'This field is required');
+        return false;
+    }
+    
+    // Email validation
+    if (field.type === 'email' && !isValidEmail(field.value)) {
+        showError(field, errorElement, 'Please enter a valid email address');
+        return false;
+    }
+    
+    // Message length validation
+    if (field.id === 'message' && field.value.trim().length < 10) {
+        showError(field, errorElement, 'Message must be at least 10 characters long');
+        return false;
+    }
+    
+    return true;
+}
+
+function showError(field, errorElement, message) {
+    field.classList.add('error');
+    if (errorElement) {
+        errorElement.textContent = message;
+        errorElement.classList.add('show');
+    }
+}
+
+function clearError() {
+    this.classList.remove('error');
+    const errorElement = document.getElementById(this.id + '-error');
+    if (errorElement) {
+        errorElement.classList.remove('show');
+    }
+}
+
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
