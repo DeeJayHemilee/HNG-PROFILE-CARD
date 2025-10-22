@@ -1,5 +1,5 @@
 # HNG-PROFILE-CARD
-Hng Frontend Task 1
+Hng Frontend Task 1&2
 
 Profile Card Project
 
@@ -17,30 +17,58 @@ Features
 File Structure
 
 ```
-profile-card.html
+index.html
+about.html
+cobtact.html
+style.css
+app.js
 ```
 
 That's it! The entire project is contained in a single HTML file with:
 
-· Embedded CSS styles
-· Embedded JavaScript
+·  CSS styles
+·  JavaScript
 · Base64-encoded avatar image
 · Inline SVG icons
 
 Code Overview
 
-HTML Structure
 
-The profile card is divided into two main sections:
+🧪 Testing & Accessibility
 
-1. Left Section (Profile Info):
-   · Avatar image
-   · Name and title
-   · Social media links (GitHub, LinkedIn, Twitter)
-2. Right Section (Content):
-   · Biography
-   · Real-time clock
-   · Hobbies and dislikes displayed as tags
+Data Test IDs
+
+All interactive elements include data-testid attributes for automated testing:
+
+Profile Page:
+
+· test-profile-card - Main container
+· test-user-name - User's name
+· test-user-bio - Biography text
+· test-user-time - Real-time clock
+· test-user-avatar - Profile image
+· test-user-social-links - Social media container
+· test-user-hobbies - Hobbies list
+· test-user-dislikes - Dislikes list
+
+Contact Page:
+
+· test-contact-name - Full name input
+· test-contact-email - Email input
+· test-contact-subject - Subject input
+· test-contact-message - Message textarea
+· test-contact-submit - Submit button
+· test-contact-error-* - Error messages
+· test-contact-success - Success message
+
+About Page:
+
+· test-about-page - Main container
+· test-about-bio - Biography section
+· test-about-goals - Goals section
+· test-about-confidence - Confidence areas
+· test-about-future-note - Future notes
+· test-about-extra - Additional thoughts
 
 CSS Features
 
